@@ -95,8 +95,12 @@ public class CreateShoppingListActivity extends AppCompatActivity {
 
     public void submitShoppingList(View view) {
         Intent intent = new Intent(this, DisplayRouteActivity.class);
-        Thread.sleep(1000);
+        try {
+            Thread.sleep(1000);
             startActivity(intent);
+        }catch (Exception e){
+
+        }
 //        JsonGen new_submit = new JsonGen(shopping_list_vec);
 //        boolean success = new_submit.generateJsonFromVector();
 //        if (success) {

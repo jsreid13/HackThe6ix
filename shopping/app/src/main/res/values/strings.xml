@@ -4,4 +4,6 @@
     <string name="button_item_search">Add</string>
     <string name="shopping_list">Shopping list empty</string>
     <string name="shopping_list_submit">Submit</string>
+    <string name="recommended_item_1">seafood</string>
+    <string name="recommended_item_2">chips</string>
 </resources>
