@@ -69,7 +69,10 @@ public class DrawRoute extends View {
         canvas.drawCircle(825,700, 10f, circle);
 
         if (DisplayRouteActivity.second_route) {
-            canvas.drawCircle(500,500, 30f, myPaint);
+            canvas.drawLine(825, 700, 825, 450, myPaint);
+            canvas.drawLine(825, 450, 875, 450, myPaint);
+            canvas.drawLine(875, 450, 875, 700, myPaint);
+            canvas.drawCircle(875, 700, 12f,circle);
         }
 
 //        canvas.drawLine(0,0, 500, 500, myPaint);
