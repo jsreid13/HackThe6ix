@@ -48,24 +48,24 @@ public class DrawRoute extends View {
         myPaint.setColor(Color.GREEN);
         circle.setStrokeWidth(10f);
         myPaint.setStrokeWidth(10f);
-        canvas.drawCircle(400,1110, 12f, myPaint);
+        canvas.drawCircle(400,1220, 12f, myPaint);
         //beer
         myPaint.setColor(Color.RED);
-        canvas.drawLine(400, 1110, 480, 1110, myPaint);
+        canvas.drawLine(400, 1220, 480, 1110, myPaint);
         canvas.drawLine(480, 1110, 480, 600, myPaint);
         canvas.drawCircle(480, 600, 10f, circle);
         //chips
-        canvas.drawLine(480, 580, 480, 400, myPaint);
-        canvas.drawLine(480, 400, 560, 400, myPaint);
-        canvas.drawLine(560, 400, 560, 750, myPaint);
-        canvas.drawCircle(560, 750, 10f, circle);
+        canvas.drawLine(480, 580, 480, 450, myPaint);
+        canvas.drawLine(480, 450, 530, 450, myPaint);
+        canvas.drawLine(530, 450, 530, 750, myPaint);
+        canvas.drawCircle(530, 750, 10f, circle);
         //cookies
-        canvas.drawLine(560, 750, 620, 1000, myPaint);
-        canvas.drawCircle(620, 1000, 10f, circle);
+        canvas.drawLine(530, 750, 590, 1000, myPaint);
+        canvas.drawCircle(590, 1000, 10f, circle);
         //Jam
-        canvas.drawLine(620,1000,620,1090, myPaint);
-        canvas.drawLine(620,1090, 825, 1090, myPaint);
-        canvas.drawLine(825, 1090, 825,700, myPaint);
+        canvas.drawLine(590,1000,590,1250, myPaint);
+        canvas.drawLine(590,1250, 825, 1250, myPaint);
+        canvas.drawLine(825, 1250, 825,700, myPaint);
         canvas.drawCircle(825,700, 10f, circle);
 
 //        canvas.drawLine(0,0, 500, 500, myPaint);
