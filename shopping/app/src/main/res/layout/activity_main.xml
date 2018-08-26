@@ -6,11 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="386dp"
-        android:layout_height="344dp"
-        app:srcCompat="@drawable/ic_map" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

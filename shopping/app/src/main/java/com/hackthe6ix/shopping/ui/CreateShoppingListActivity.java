@@ -97,8 +97,8 @@ public class CreateShoppingListActivity extends AppCompatActivity {
             s_l = (TextView) findViewById(R.id.shoppingList);
             s_l.setText(shopping_list);
             Toast.makeText(getApplicationContext(), "Shopping List submission succeed!", Toast.LENGTH_LONG).show();
-//            Intent intent = new Intent(this, DisplayRouteActivity.class);
-//            startActivity(intent);
+            Intent intent = new Intent(this, DisplayRouteActivity.class);
+            startActivity(intent);
         }
         else {
             Toast.makeText(getApplicationContext(), "Shopping List submission failed!", Toast.LENGTH_LONG).show();
