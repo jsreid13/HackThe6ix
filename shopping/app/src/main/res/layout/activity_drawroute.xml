@@ -10,6 +10,7 @@
     android:id="@+id/imageView"
     android:layout_width="386dp"
     android:layout_height="344dp"
-    app:srcCompat="@drawable/ic_map" />
+    app:srcCompat="@drawable/image"
+        android:contentDescription="TODO" />
 
 </android.support.constraint.ConstraintLayout>

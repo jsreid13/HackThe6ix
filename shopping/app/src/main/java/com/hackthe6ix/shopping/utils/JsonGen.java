@@ -2,6 +2,9 @@ package com.hackthe6ix.shopping.utils;
 
 import android.content.Context;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Vector;
@@ -9,8 +12,8 @@ import java.util.Vector;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+//import org.json.simple.JSONArray;
+//import org.json.simple.JSONObject;
 
 public class JsonGen
 {
@@ -24,24 +27,25 @@ public class JsonGen
 //        obj.put("Name", "Shopping list items");
 
         JSONArray shopping_list_json = new JSONArray();
-        for (int i = 0; i < submit_shopping_list.size(); i++)
-            shopping_list_json.add(submit_shopping_list.get(i));
-        obj.put("Shopping List", shopping_list_json);
+//        for (int i = 0; i < submit_shopping_list.size(); i++)
+         //   shopping_list_json.add(submit_shopping_list.get(i));
+       // obj.put("Shopping List", shopping_list_json);
 
 //        String filePath = ctx.getFilesDir().getPath().toString() + "/fileName.json";
-        String filePath = "sdcard/fileName.json";
-        try (FileWriter file = new FileWriter(filePath)) {
-            file.write(obj.toJSONString());
-            System.out.println("Successfully Copied JSON Object to File...");
-            System.out.println("\nJSON Object: " + obj);
-            // call API to submit the json file
-
-            return true;
-        }
-        catch (java.io.IOException e) {
-            System.err.println("IOException: " + e.getMessage());
-            return false;
-        }
+//        String filePath = "sdcard/fileName.json";
+//        try (FileWriter file = new FileWriter(filePath)) {
+//            file.write(obj.toJSONString());
+//            System.out.println("Successfully Copied JSON Object to File...");
+//            System.out.println("\nJSON Object: " + obj);
+//            // call API to submit the json file
+//
+//            return true;
+//        }
+//        catch (java.io.IOException e) {
+//            System.err.println("IOException: " + e.getMessage());
+//            return false;
+//        }
+        return true;
     }
 
     public boolean uploadJsonFile() {

@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hackthe6ix.shopping.MainActivity;
 import com.hackthe6ix.shopping.R;
 import com.hackthe6ix.shopping.utils.JsonGen;
 
@@ -19,6 +20,7 @@ public class CreateShoppingListActivity extends AppCompatActivity {
     public Vector<String> shopping_list_vec = new Vector<String>();
     public TextView s_l;
     public static Vector<String> item_list_vec = new Vector<String>();
+    public String items = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,8 @@ public class CreateShoppingListActivity extends AppCompatActivity {
                 "bakery",
                 "flowers",
                 "market",
-                "seafood"
+                "seafood",
+                "apple"
         };
         item_list_vec.addAll(Arrays.asList(item_list_arr));
     }
@@ -82,26 +85,31 @@ public class CreateShoppingListActivity extends AppCompatActivity {
             shopping_list = shopping_list + "\n" + new_item;
             s_l = (TextView) findViewById(R.id.shoppingList);
             s_l.setText(shopping_list);
+            items = items + shopping_list;
         }
         else {
             Toast.makeText(getApplicationContext(), "Item entered not available!", Toast.LENGTH_LONG).show();
         }
+        Toast.makeText(this, items, Toast.LENGTH_LONG);
     }
 
     public void submitShoppingList(View view) {
-        JsonGen new_submit = new JsonGen(shopping_list_vec);
-        boolean success = new_submit.generateJsonFromVector();
-        if (success) {
-            shopping_list_vec.clear();
-            shopping_list = "Shopping List submitted";
-            s_l = (TextView) findViewById(R.id.shoppingList);
-            s_l.setText(shopping_list);
-            Toast.makeText(getApplicationContext(), "Shopping List submission succeed!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, DisplayRouteActivity.class);
+        Intent intent = new Intent(this, DisplayRouteActivity.class);
+        Thread.sleep(1000);
             startActivity(intent);
-        }
-        else {
-            Toast.makeText(getApplicationContext(), "Shopping List submission failed!", Toast.LENGTH_LONG).show();
-        }
+//        JsonGen new_submit = new JsonGen(shopping_list_vec);
+//        boolean success = new_submit.generateJsonFromVector();
+//        if (success) {
+//            shopping_list_vec.clear();
+//            shopping_list = "Shopping List submitted";
+//            s_l = (TextView) findViewById(R.id.shoppingList);
+//            s_l.setText(shopping_list);
+//            Toast.makeText(getApplicationContext(), "Shopping List submission succeed!", Toast.LENGTH_LONG).show();
+//            Intent intent = new Intent(this, DisplayRouteActivity.class);
+//            startActivity(intent);
+//        }
+//        else {
+//            Toast.makeText(getApplicationContext(), "Shopping List submission failed!", Toast.LENGTH_LONG).show();
+//        }
     }
 }
