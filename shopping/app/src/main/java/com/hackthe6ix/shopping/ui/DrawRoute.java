@@ -45,10 +45,12 @@ public class DrawRoute extends View {
         myPaint = new Paint();
         circle = new Paint();
         circle.setColor(Color.BLACK);
-        myPaint.setColor(Color.RED);
+        myPaint.setColor(Color.GREEN);
         circle.setStrokeWidth(10f);
         myPaint.setStrokeWidth(10f);
+        canvas.drawCircle(400,1110, 12f, myPaint);
         //beer
+        myPaint.setColor(Color.RED);
         canvas.drawLine(400, 1110, 480, 1110, myPaint);
         canvas.drawLine(480, 1110, 480, 600, myPaint);
         canvas.drawCircle(480, 600, 10f, circle);
