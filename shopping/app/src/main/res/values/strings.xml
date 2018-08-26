@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">shopping</string>
+    <string name="item_search">Example: apple</string>
+    <string name="button_item_search">Add</string>
+    <string name="shopping_list">Shopping list empty</string>
+    <string name="shopping_list_submit">Submit</string>
 </resources>
