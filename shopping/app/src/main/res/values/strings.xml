@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">shopping</string>
+    <string name="app_name">Fast Shopping</string>
+    <string name="svg">SVG</string>
 </resources>
