@@ -68,6 +68,10 @@ public class DrawRoute extends View {
         canvas.drawLine(825, 1250, 825,700, myPaint);
         canvas.drawCircle(825,700, 10f, circle);
 
+        if (DisplayRouteActivity.second_route) {
+            canvas.drawCircle(500,500, 30f, myPaint);
+        }
+
 //        canvas.drawLine(0,0, 500, 500, myPaint);
 //        canvas.drawLine(500, 500, 250, 650, myPaint);
 //        for(int i = 0; i < myVect.size() -1; i++) {
