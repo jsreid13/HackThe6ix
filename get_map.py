@@ -9,6 +9,7 @@ import pyastar
 from time import time
 from os.path import basename, join, splitext
 
+
 # input/output files
 MAZE_FPATH = join('mazes', 'maze_small.png')
 # MAZE_FPATH = join('mazes', 'maze_large.png')
@@ -160,6 +161,7 @@ def main(food):
     # set allow_diagonal=True to enable 8-connectivity
     path_color = (1, 1, 0)
     for end in ends:
+        food_item = [key for key, value in locs.items() if value == end][0]
         path = pyastar.astar_path(grid, start, end, allow_diagonal=False)
         start = end
         output['path'] = path.tolist()
@@ -167,7 +169,7 @@ def main(food):
         if path.shape[0] > 0:
             maze[path[:, 0], path[:, 1]] = maze[path[:, 0], path[:, 1]] - path_color
             print('plotting path to %s'
-                  % ([key for key, value in locs.items() if value == end][0]))
+                  % (food_item))
         else:
             print('no path found')
         path_color = (random.uniform(0.1, 0.5),
@@ -177,15 +179,22 @@ def main(food):
         maze_out = np.repeat(maze, 20, axis=0)
         maze_out = np.repeat(maze_out, 20, axis=1)
         maze_out = np.flipud(maze_out)
-        cv2.imshow("image", maze_out)
+        cv2.imshow(food_item, maze_out)
         cv2.waitKey()
+        cv2.destroyAllWindows()
 
     print('done')
     with open('map.json', 'w') as outfile:
         json.dump(output, outfile)
+    for i in range(grid_size[0]):
+        for j in range(grid_size[1]):
+            maze[i, j] = maze[i, j] * 255
+    maze_out = np.repeat(maze, 20, axis=0)
+    maze_out = np.repeat(maze_out, 20, axis=1)
+    maze_out = np.flipud(maze_out)
     cv2.imwrite(OUTP_FPATH, maze_out)
 
 
 if __name__ == '__main__':
-    food = list(locs.keys())[:10]
+    food = list(locs.keys())[:5]
     main(food)
