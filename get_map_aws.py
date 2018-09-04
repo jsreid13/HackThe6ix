@@ -188,9 +188,30 @@ def main(food):
 
 
 def lambda_handler(event, context):
-    food = event['shopping_list']
-    json_out = main(food)
-    return json_out
+    try:
+        # If this exists then the request is from a remote call to the api
+        if event["httpMethod"] == "GET":
+            shopping_list = event["queryStringParameters"]["shopping_list"]
+            if not shopping_list:
+                raise KeyError
+            # Proper formatting has a dict with a string of a dict inside as a value
+            response = {"body": json.dumps(main(shopping_list))}
+            print(response)
+            return response
+    except KeyError:
+        # This case is for when it is run within AWS
+        try:
+            shopping_list = event["shopping_list"]
+            print("shopping list is good")
+            response = {"body": json.dumps(main(shopping_list))}
+            print(response)
+            return response
+        # If no list is found
+        except KeyError as e:
+            print(e)
+            response = {"body": json.dumps("No shopping list found")}
+            print(response)
+            return response
 
 
 #  pprint(main(list(locs.keys())[:5]))
